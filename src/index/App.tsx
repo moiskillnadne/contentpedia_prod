@@ -1,20 +1,40 @@
-import React from 'react'
-import logo from './logo.svg'
 import './App.css'
+import React from 'react'
+import { Switch, Route, Router, useLocation } from 'react-router-dom'
 
-function App() {
+import history from '@/index/history'
+
+// Pages
+import MainPage from '@/pages/main'
+import ProfilePage from '@/pages/profile'
+import FavoritesPage from '@/pages/favorite'
+import SettingsPage from '@/pages/settings'
+import AboutPage from '@/pages/about'
+import ReleasePage from '@/pages/release'
+import SupportPage from '@/pages/support'
+
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <Navigation />
+    </Router>
+  )
+}
+
+function Navigation(): JSX.Element {
+  const location = useLocation()
+  return (
+    <Switch location={location}>
+      <Route exact path="/" component={MainPage} />
+
+      <Route path="/profile" component={ProfilePage} />
+      <Route path="/favorites" component={FavoritesPage} />
+      <Route path="/settings" component={SettingsPage} />
+
+      <Route path="/about" component={AboutPage} />
+      <Route path="/release" component={ReleasePage} />
+      <Route path="/support" component={SupportPage} />
+    </Switch>
   )
 }
 
