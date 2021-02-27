@@ -24,17 +24,19 @@ function App(): JSX.Element {
 function Navigation(): JSX.Element {
   const location = useLocation()
   return (
-    <Switch location={location}>
-      <Route exact path="/" component={MainPage} />
+    <div className="App">
+      <Switch location={location}>
+        <Route exact path="/" component={MainPage} />
 
-      <Route path="/profile" component={ProfilePage} />
-      <Route path="/favorites" component={FavoritesPage} />
-      <Route path="/settings" component={SettingsPage} />
+        <Route path="/profile" component={ProfilePage} />
+        <Route path="/favorites" component={FavoritesPage} />
+        <Route path="/settings" component={SettingsPage} />
 
-      <Route path="/about" component={AboutPage} />
-      <Route path="/release" component={ReleasePage} />
-      <Route path="/support" component={SupportPage} />
-    </Switch>
+        <Route path="/about" component={AboutPage} />
+        <Route path="/release" component={ReleasePage} />
+        <Route path="/support" component={SupportPage} />
+      </Switch>
+    </div>
   )
 }
 
