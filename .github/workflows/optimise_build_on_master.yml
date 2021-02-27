@@ -37,4 +37,4 @@ jobs:
         run: cd /root/ && mkdir completed_build
 
       - name: Save completed build folder in /root/completed_builds/
-        run: cp -r /root/actions-runner-production/_work/contentpedia_prod/contentpedia_prod/build/* /root/completed_builds/
+        run: cp -r /root/actions-runner-production/_work/contentpedia_prod/contentpedia_prod/build/* /root/completed_build/
