@@ -1,0 +1,20 @@
+name: DEPLOY_ON_RELEASE
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Test log
+        run: console.log('Krasava')
