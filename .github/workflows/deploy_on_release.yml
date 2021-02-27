@@ -17,4 +17,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Test log
-        run: console.log('Krasava')
+        run: cp -r /root/completed_build /var/www/contentpedia_prod
