@@ -31,7 +31,7 @@ jobs:
         run: npm run-script build
 
       - name: Delete folder with old build version
-        run: mkdir /root/completed_build/
+        run: cd /root/ && mkdir completed_build
 
       - name: Create folder for build
         run: mkdir /root/completed_build/
