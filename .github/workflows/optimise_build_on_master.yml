@@ -1,0 +1,40 @@
+name: OPTIMISE_BUILD_ON_MASTER
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Remove old build
+        run: rm -rf build
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Building our app
+        run: npm run-script build
+
+      - name: Delete folder with old build version
+        run: mkdir /root/completed_build/
+
+      - name: Create folder for build
+        run: mkdir /root/completed_build/
+
+      - name: Save completed build folder in /root/completed_builds/
+        run: cp -r /root/actions-runner-production/contentpedia/contentpedia_prod/contentpedia_prod/build/* /root/completed_builds/
