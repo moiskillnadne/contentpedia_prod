@@ -25,7 +25,7 @@ jobs:
         run: rm -rf build
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Building our app
         run: npm run-script build
