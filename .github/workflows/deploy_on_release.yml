@@ -16,5 +16,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Test log
-        run: cp -r /root/completed_build /var/www/contentpedia_prod
+      - name: Save build in /var/www/contentpedia_prod
+        run: cp -r /root/completed_build/* /var/www/contentpedia_prod
