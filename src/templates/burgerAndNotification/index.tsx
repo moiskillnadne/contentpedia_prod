@@ -7,7 +7,10 @@ import Burger from '@/components/burger'
 const BurgerAndNotification = (): JSX.Element => {
   return (
     <div className="blockAndNotificationWrapper">
-      <Burger />
+      <div className="burgerAndNotificationPosition">
+        <Burger />
+        <Burger />
+      </div>
     </div>
   )
 }
