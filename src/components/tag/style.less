@@ -1,5 +1,24 @@
 .tag-container {
+  display: flex;
+  align-self: center;
+
+  background-color: rgba(255, 255, 255, 0);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+
+  margin: 0px 15px 0px 0px;
+
   .tag-component {
     padding: 10px 15px;
+    color: white;
+    font-size: 14px;
   }
+
+}
+
+.active-tag {
+  background: rgb(185,135,243);
+  background: linear-gradient(90deg, rgba(185,135,243,1) 0%, rgba(91,212,236,1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }

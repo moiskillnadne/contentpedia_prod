@@ -1,8 +1,18 @@
 .tagsLine-container {
-  width: 100%;
-  overflow-x: scroll;
 
   .tagsLine {
+    display: flex;
+    scroll-behavior: smooth;
+
     padding: 10px 0px;
+    height: 50px;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+
+  }
+
+  .tagsLine::-webkit-scrollbar {
+    display: none;
   }
 }
