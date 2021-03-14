@@ -35,7 +35,7 @@ const TagsLine = (): JSX.Element => {
     <div className="tagsLine-container">
       <div className="tagsLine" ref={scrollLineRef}>
         {fakeTags.map((tag: ITag) => {
-          return <TagItem label={tag.label} active={tag.active} />
+          return <TagItem label={tag.label} active={tag.active} key={tag.label} />
         })}
       </div>
     </div>
