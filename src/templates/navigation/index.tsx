@@ -2,12 +2,13 @@ import './style.less'
 import React from 'react'
 
 import Title from './title'
+import Menu from './menu'
 
 const Navigation = (): JSX.Element => {
   return (
     <div className="navigation">
       <Title />
-      <div>menu</div>
+      <Menu />
       <div>other</div>
       <div>account</div>
     </div>
